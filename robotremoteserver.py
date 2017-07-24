@@ -46,7 +46,7 @@ class RobotRemoteServer(SimpleXMLRPCServer):
         registry = self._registry
 
         registry['stop_remote_server'] = RobotRemoteServer
-        registry.update({k: OperatingSystem for k in RobotRemoteServer._get_keyword_names(OperatingSystem)})
+        registry.update({k: OperatingSystem() for k in RobotRemoteServer._get_keyword_names(OperatingSystem)})
 
         return sorted(registry.keys())
 
